@@ -275,6 +275,23 @@ FastAPI Application
        SQLite Database
 ```
 
+## ScreenShots
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 192250" src="https://github.com/user-attachments/assets/4820fbf4-cad4-4fe0-b944-3e7e73cb3364" />
+## Swagger UI : All API Endpoints
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 192314" src="https://github.com/user-attachments/assets/2f7bad71-457d-443a-984e-414d57fa9dce" />
+## Dashboard
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 192328" src="https://github.com/user-attachments/assets/4cf72e4e-48b1-4c54-8cba-0301f6056abf" />
+## New Ticket Form
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 192342" src="https://github.com/user-attachments/assets/66d603b0-5c20-40c0-aa4d-e7578c1944d5" />
+## Ticket Details
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 192547" src="https://github.com/user-attachments/assets/e57547cd-a57f-404a-849d-197752b766ed" />
+
+
 ## Technologies Used
 
 | Technology | Purpose                                |
