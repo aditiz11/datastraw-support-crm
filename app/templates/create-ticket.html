@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Ticket - SupportDesk</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body class="bg-slate-50 text-slate-900">
+
+    <div class="min-h-screen">
+
+
+        <!-- Header -->
+
+        <header class="bg-white border-b border-slate-200">
+
+            <div class="max-w-4xl mx-auto px-6 py-5">
+
+                <div class="flex items-center gap-4">
+
+                    <a
+                        href="/"
+                        class="text-slate-500 hover:text-slate-900"
+                    >
+                        ←
+                    </a>
+
+                    <div>
+
+                        <h1 class="text-2xl font-bold">
+                            Create New Ticket
+                        </h1>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            Create a customer support ticket
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Form -->
+
+        <main class="max-w-4xl mx-auto px-6 py-8">
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 md:p-8">
+
+                <form id="create-ticket-form" class="space-y-6">
+
+
+                    <!-- Customer Name -->
+
+                    <div>
+
+                        <label
+                            for="customer-name"
+                            class="block text-sm font-medium mb-2"
+                        >
+                            Customer Name
+                        </label>
+
+                        <input
+                            id="customer-name"
+                            name="customer_name"
+                            type="text"
+                            required
+                            placeholder="e.g. Rahul Sharma"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-300"
+                        >
+
+                    </div>
+
+
+                    <!-- Customer Email -->
+
+                    <div>
+
+                        <label
+                            for="customer-email"
+                            class="block text-sm font-medium mb-2"
+                        >
+                            Customer Email
+                        </label>
+
+                        <input
+                            id="customer-email"
+                            name="customer_email"
+                            type="email"
+                            required
+                            placeholder="e.g. rahul@gmail.com"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-300"
+                        >
+
+                    </div>
+
+
+                    <!-- Subject -->
+
+                    <div>
+
+                        <label
+                            for="subject"
+                            class="block text-sm font-medium mb-2"
+                        >
+                            Issue Title
+                        </label>
+
+                        <input
+                            id="subject"
+                            name="subject"
+                            type="text"
+                            required
+                            placeholder="e.g. Payment failed"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-300"
+                        >
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <div>
+
+                        <label
+                            for="description"
+                            class="block text-sm font-medium mb-2"
+                        >
+                            Issue Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="7"
+                            required
+                            placeholder="Describe the customer's issue..."
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-300 resize-none"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Error -->
+
+                    <div
+                        id="form-error"
+                        class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"
+                    ></div>
+
+
+                    <!-- Actions -->
+
+                    <div class="flex items-center justify-end gap-3 pt-4">
+
+                        <a
+                            href="/"
+                            class="px-5 py-2.5 border border-slate-300 rounded-lg font-medium hover:bg-slate-50"
+                        >
+                            Cancel
+                        </a>
+
+                        <button
+                            id="submit-button"
+                            type="submit"
+                            class="bg-slate-900 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-slate-800 transition"
+                        >
+                            Create Ticket
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="/static/js/create-ticket.js"></script>
+
+</body>
+
+</html>

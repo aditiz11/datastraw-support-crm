@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ticket Details - SupportDesk</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body class="bg-slate-50 text-slate-900">
+
+    <div class="min-h-screen">
+
+
+        <!-- Header -->
+
+        <header class="bg-white border-b border-slate-200">
+
+            <div class="max-w-5xl mx-auto px-6 py-5">
+
+                <div class="flex items-center gap-4">
+
+                    <a
+                        href="/"
+                        class="text-slate-500 hover:text-slate-900"
+                    >
+                        ←
+                    </a>
+
+                    <div>
+
+                        <h1 class="text-2xl font-bold">
+                            Ticket Details
+                        </h1>
+
+                        <p
+                            id="ticket-id-header"
+                            class="text-sm text-slate-500 mt-1"
+                        >
+                            Loading...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="max-w-5xl mx-auto px-6 py-8">
+
+            <!-- Loading -->
+
+            <div
+                id="loading"
+                class="text-center py-16"
+            >
+                <p class="text-slate-500">
+                    Loading ticket...
+                </p>
+            </div>
+
+
+            <!-- Error -->
+
+            <div
+                id="error-state"
+                class="hidden text-center py-16"
+            >
+
+                <p class="text-red-600 font-medium">
+                    Unable to load ticket.
+                </p>
+
+                <a
+                    href="/"
+                    class="inline-block mt-4 text-sm text-slate-600 hover:text-slate-900"
+                >
+                    ← Back to tickets
+                </a>
+
+            </div>
+
+
+            <!-- Ticket Content -->
+
+            <div
+                id="ticket-content"
+                class="hidden space-y-6"
+            >
+
+
+                <!-- Main Ticket -->
+
+                <section class="bg-white rounded-xl border border-slate-200">
+
+                    <div class="p-6 md:p-8">
+
+
+                        <!-- Title + Status -->
+
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+
+                            <div>
+
+                                <p
+                                    id="ticket-id"
+                                    class="text-sm font-semibold text-slate-500 mb-2"
+                                >
+                                    TKT-001
+                                </p>
+
+                                <h2
+                                    id="ticket-subject"
+                                    class="text-2xl font-bold"
+                                >
+                                    Loading...
+                                </h2>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-2">
+
+                                <div id="ticket-priority-badge"></div>
+
+                                <div id="ticket-status-badge"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Customer -->
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-6 border-t border-slate-200">
+
+                            <div>
+
+                                <p class="text-xs uppercase tracking-wide text-slate-500 font-semibold">
+                                    Customer
+                                </p>
+
+                                <p
+                                    id="customer-name"
+                                    class="font-medium mt-1"
+                                >
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs uppercase tracking-wide text-slate-500 font-semibold">
+                                    Email
+                                </p>
+
+                                <p
+                                    id="customer-email"
+                                    class="font-medium mt-1"
+                                >
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs uppercase tracking-wide text-slate-500 font-semibold">
+                                    Created
+                                </p>
+
+                                <p
+                                    id="created-at"
+                                    class="font-medium mt-1"
+                                >
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="text-xs uppercase tracking-wide text-slate-500 font-semibold">
+                                    Last Updated
+                                </p>
+
+                                <p
+                                    id="updated-at"
+                                    class="font-medium mt-1"
+                                >
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <div class="mt-8 pt-6 border-t border-slate-200">
+
+                            <p class="text-xs uppercase tracking-wide text-slate-500 font-semibold mb-3">
+                                Issue Description
+                            </p>
+
+                            <p
+                                id="ticket-description"
+                                class="text-slate-700 whitespace-pre-wrap leading-relaxed"
+                            >
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Update Ticket -->
+
+                <section class="bg-white rounded-xl border border-slate-200">
+
+                    <div class="p-6 md:p-8">
+
+                        <h3 class="text-lg font-semibold">
+                            Update Ticket
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            Change the ticket status or add an internal note.
+                        </p>
+
+
+                        <div class="mt-6">
+
+                            <label
+                                for="status"
+                                class="block text-sm font-medium mb-2"
+                            >
+                                Status
+                            </label>
+
+                            <select
+                                id="status"
+                                class="w-full md:w-72 px-4 py-3 border border-slate-300 rounded-lg bg-white outline-none focus:ring-2 focus:ring-slate-300"
+                            >
+
+                                <option value="Open">
+                                    Open
+                                </option>
+
+                                <option value="In Progress">
+                                    In Progress
+                                </option>
+
+                                <option value="Closed">
+                                    Closed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mt-5">
+
+                            <label
+                                for="priority"
+                                class="block text-sm font-medium mb-2"
+                            >
+                                Priority
+                            </label>
+
+                            <select
+                                id="priority"
+                                class="w-full md:w-72 px-4 py-3 border border-slate-300 rounded-lg bg-white outline-none focus:ring-2 focus:ring-slate-300"
+                            >
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                                <option value="Medium">
+                                    Medium
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="mt-5">
+
+                            <label
+                                for="note"
+                                class="block text-sm font-medium mb-2"
+                            >
+                                Add Internal Note
+                            </label>
+
+                            <textarea
+                                id="note"
+                                rows="4"
+                                placeholder="Add a note for other support team members..."
+                                class="w-full px-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-slate-300 resize-none"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div
+                            id="update-error"
+                            class="hidden mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"
+                        ></div>
+
+
+                        <div
+                            id="update-success"
+                            class="hidden mt-4 bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-lg text-sm"
+                        >
+                            Ticket updated successfully.
+                        </div>
+
+
+                        <div class="flex justify-end mt-5">
+
+                            <button
+                                id="update-button"
+                                class="bg-slate-900 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-slate-800 transition"
+                            >
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Notes -->
+
+                <section class="bg-white rounded-xl border border-slate-200">
+
+                    <div class="p-6 md:p-8">
+
+                        <div class="flex items-center justify-between">
+
+                            <div>
+
+                                <h3 class="text-lg font-semibold">
+                                    Internal Notes
+                                </h3>
+
+                                <p class="text-sm text-slate-500 mt-1">
+                                    Notes shared with the support team.
+                                </p>
+
+                            </div>
+
+                            <span
+                                id="notes-count"
+                                class="text-sm text-slate-500"
+                            >
+                                0 notes
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            id="notes-list"
+                            class="mt-6 space-y-4"
+                        >
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="/static/js/ticket-detail.js"></script>
+
+</body>
+
+</html>
